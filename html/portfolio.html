@@ -1,0 +1,55 @@
+﻿<div class="container" ng-init="app.setTab(2, $event)">
+    <div class="jumbotron animated fadeInDown">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1 class="page-header text-center well">
+                    My <strong>Portfolio</strong>
+                </h1>
+            </div>
+            <div class="col-sm-12">
+                <p class="text-12 text-center">
+                    Please note that my portfolio is under construction with the majority of the research done for each of the above projects.
+                    However they are yet to be finished and won't be finished until I graduate in 2017.     
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row animated fadeInUp portfolio-item blur">
+        <div class="row row-eq-height">
+            <div class="col-md-12">
+                <div class="col-sm-6">
+                    <a ng-click="app.handle($event)" rel="portfolio-gallery" class="fancybox" href="../images/portfolio/js.jpg" title="Hint cough JavaScript Hint!">
+                        <img style="margin-top: 25px;" class="img-responsive center-block shaddow" src="../images/portfolio/js.jpg" alt=""/>
+                    </a>
+                </div>
+                <div class="col-md-6 text-center">
+                    <h2>TypeGame</h2><hr/>
+                    <p class="text-6 text-center">
+                        This project has a long way to go however without spoiling anything till it is done I can describe it as a new way of writing portable game applications that are fast yet flexible. It will involve C++ and JavaScript and will form the base of my honours project. It will look at the creation of portable games and how a mix of web and open source activity can be suitable in modern game development.
+                    </p>
+                    <button type="button" class="btn btn-primary btn-md" ng-click="app.notDone()">
+                        View Project
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="row row-eq-height portfolio-item blur">
+            <div class="col-md-12">
+                <div class="col-sm-6">
+                    <a ng-click="app.handle($event)" rel="portfolio-gallery" class="fancybox" href="../images/portfolio/phoenix.png" title="The prototype logo for the engine.">
+                        <img style="margin-top: 25px;" class="img-responsive center-block shaddow" src="../images/portfolio/phoenix.png" alt=""/>
+                    </a>
+                </div>
+                <div class="col-md-6 text-center">
+                    <h2>Phoenix Engine</h2><hr/>
+                    <p class="text-6 text-center">
+                        Like the project above this has a long way to go as well. Starting from the engine I built for the game Silence (which I needed to build for a university module) I plan to build upon it and this is that project. I would like to see additional items such as a better engine design as well as multiple render targets and perhaps even a GUI.
+                    </p>
+                    <button type="button" class="btn btn-primary btn-md" ng-click="app.notDone()">
+                        View Project
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
