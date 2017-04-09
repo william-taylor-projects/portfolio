@@ -1,0 +1,32 @@
+﻿{
+    "libs": [
+        {
+            "name": "Phoenix",
+            "language": "C++",
+            "version": "1.0.0",
+            "platform": "Desktop",
+            "link": "pages/dashboard/dashboards/fav_libraries/vex-master.zip"
+        },
+        {
+            "name": "Scepter",
+            "language": "C++",
+            "version": "1.0.0",
+            "platform": "Desktop",
+            "link": "pages/dashboard/dashboards/fav_libraries/vex-master.zip"
+        },
+        {
+            "name": "WPL",
+            "language": "C++",
+            "version": "1.0.0",
+            "platform": "Desktop",
+            "link": "pages/dashboard/dashboards/fav_libraries/vex-master.zip"
+        },
+        {
+            "name": "BAF",
+            "language": "Java",
+            "version": "1.0.0",
+            "platform": "Android",
+            "link": "pages/dashboard/dashboards/fav_libraries/vex-master.zip"
+        }
+    ]
+}

@@ -1,0 +1,124 @@
+﻿{
+    "libs": [
+        {
+            "name": "Angular",
+            "language": "JavaScript",
+            "version": "1.4.2",
+            "platform": "Web",
+            "link": "/libs/fav/angular-1.4.2.zip"
+        },
+        {
+            "name": "Bass",
+            "language": "C++/C#",
+            "version": "2.4",
+            "platform": "Desktop",
+            "link": "/libs/fav/bass24.zip"
+        },
+        {
+            "name": "Bootstrap",
+            "language": "JavaScript",
+            "version": "3.3.5",
+            "platform": "Web",
+            "link": "/libs/fav/bootstrap-3.3.5-dist.zip"
+        },
+        {
+            "name": "FreeImage",
+            "language": "C++",
+            "version": "3.1.7",
+            "platform": "Desktop",
+            "link": "/libs/fav/FreeImage3170.zip"
+        },
+        {
+            "name": "GLEW",
+            "language": "C++",
+            "version": "1.12",
+            "platform": "Desktop",
+            "link": "/libs/fav/glew-1.12.0-win32.zip"
+        },
+        {
+            "name": "GLM",
+            "language": "C++",
+            "version": "0.9.6.3",
+            "platform": "Desktop",
+            "link": "/libs/fav/glm-0.9.6.3.zip"
+        },
+        {
+            "name": "IrrKlang",
+            "language": "C++/C#",
+            "version": "1.5",
+            "platform": "Desktop",
+            "link": "/libs/fav/irrKlang-32bit-1.5.0.zip"
+        },
+        {
+            "name": "Jquery",
+            "language": "JavaScript",
+            "version": "2.1.4",
+            "platform": "Desktop",
+            "link": "/libs/fav/jquery-2.1.4.min.zip"
+        },
+        {
+            "name": "MonoGame",
+            "language": "C#",
+            "version": "3.4",
+            "platform": "Desktop/Mobile",
+            "link": "/libs/fav/MonoGameSetup.exe"
+        },
+        {
+            "name": "OpenTK",
+            "language": "C#",
+            "version": "2014-07-23",
+            "platform": "Desktop/Mobile",
+            "link": "/libs/fav/opentk-2014-07-23.exe"
+        },
+        {
+            "name": "Phaser", 
+            "language": "JavaScript", 
+            "version": "2.3.0", 
+            "platform": "Web",
+            "link": "/libs/fav/phaser-2.3.0.zip"
+        },
+        {
+            "name": "SDL2_IMG",
+            "language": "C++",
+            "version": "2.0",
+            "platform": "Desktop",
+            "link": "/libs/fav/SDL2_image-devel-2.0.0-VC.zip"
+        },
+        {
+            "name": "SDL2_MIX",
+            "language": "C++",
+            "version": "2.0",
+            "platform": "Desktop",
+            "link": "/libs/fav/SDL2_mixer-devel-2.0.0-VC.zip"
+        },
+        {
+            "name": "SDL2_NET",
+            "language": "C++",
+            "version": "2.0",
+            "platform": "Desktop",
+            "link": "/libs/fav/SDL2_net-devel-2.0.0-VC.zip"
+        },
+        {
+            "name": "SDL2",
+            "language": "C++",
+            "version": "2.0.3",
+            "platform": "Desktop",
+            "link": "/libs/fav/SDL2-devel-2.0.3-VC.zip"
+        },
+        {
+            "name": "SFML",
+            "language": "C++",
+            "version": "2.3.1",
+            "platform": "Desktop",
+            "link": "/libs/fav/SFML-2.3.1-windows-vc12-32-bit.zip"
+        },
+        {
+            "name": "Vex",
+            "language": "JavaScript",
+            "version": "2.3.2",
+            "platform": "Web",
+            "link": "/libs/fav/vex-master.zip"
+        }
+
+    ]
+}

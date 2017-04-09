@@ -1,0 +1,21 @@
+{
+  "name": "WebsiteBackend",
+  "version": "1.0.0",
+  "description": "A backend for my website.",
+  "main": "website_backend.js",
+  "scripts": {
+    "start": "node website-server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "William Taylor",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "colors": "^1.1.2",
+    "cors": "^2.7.1",
+    "emailjs": "^0.3.13",
+    "express": "^4.13.4",
+    "formidable": "^1.0.17",
+    "requestify": "^0.1.17"
+  }
+}

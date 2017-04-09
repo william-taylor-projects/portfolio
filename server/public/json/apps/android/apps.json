@@ -1,0 +1,22 @@
+﻿{
+    "apps": [
+        {
+            "desc": "Simple mapping app for new students at UWS.",
+            "img": "/apps/img/uws_campus.jpg",
+            "zip": "/apps/zip/UWS.zip",
+            "git": "https://play.google.com/store/apps/details?id=com.uws.campus_app&hl=en_GB"
+        },
+        {
+            "desc": "This is a small wave survival game.",
+            "img": "/apps/img/planet-defense.jpg",
+            "zip": "/apps/zip/DefenseGame.zip",
+            "git": "https://play.google.com/store/apps/details?id=com.planetDefense&hl=en_GB"
+        },
+        {
+            "desc": "A simple world cup simulator.",
+            "img": "/apps/img/world-cup-manager.jpg",
+            "zip": "/apps/zip/WorldCupManager.zip",
+            "git": "https://play.google.com/store/apps/details?id=framework.core&hl=en_GB"
+        }
+    ]
+}
