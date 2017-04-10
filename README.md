@@ -5,11 +5,11 @@
 
 # Portfolio
 
-To help promote my work and appear more professional I created this portfolio website.
+To help promote my work and appear more professional I created this portfolio website. It tracks my GitHub work and my current status and LinkedIn and provides links to projects I have worked on as well as a form for contacting me directly and a map for showing where I am based. 
 
 ## Overview
 
-The current version is built with Angular and Bootstrap and uses Webpack for module bundling. Animations are done with the Animate.css library which provides raw css animations that work across multiple browsers. It is hosted using an AWS EC2 instance where a Node.js server serves the website to viewers it also deals with sending emails using forms on the website.
+The current version is built with Angular and Bootstrap and uses Webpack for module bundling. Animations are done with the Animate.css library which provides raw css animations that work across multiple browsers. I also use the GitHub Activity Feed library for tracking GitHub work and I also use a LinkedIn plugin that dispays a card to my current LinkedIn page. All this is hosted using an AWS EC2 instance where a Node.js server serves the website to viewers it also deals with sending emails using forms on the website.
 
 ## Development
 
