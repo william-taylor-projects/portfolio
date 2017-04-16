@@ -13,6 +13,12 @@ textarea {
     padding-bottom: 6px;
 }
 
+@media (min-width: 550px) {
+    h1 {
+        font-size: 6.0rem;
+    }
+}
+
 .header {
     text-align: center;
     height: 400px;
@@ -26,7 +32,7 @@ textarea {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
-    margin: 0 10% 0 10%;
+    margin: 0 10px 0 10px;
 }
 
 img {
@@ -68,9 +74,9 @@ img {
 .timeline ul li div {
   position: relative;
   bottom: 0;
-  width: 400px;
+  width: 350px;
   padding: 15px;
-  background: #d6d9da;
+  background: rgba(187, 187, 187, 0.27);
 }
 
 .timeline ul li div::before {
@@ -89,7 +95,7 @@ img {
 .timeline ul li:nth-child(odd) div::before {
   left: -15px;
   border-width: 8px 16px 8px 0;
-  border-color: transparent #d6d9da; transparent transparent;
+  border-color: transparent #d6d9da transparent transparent;
 }
 
 .timeline ul li:nth-child(even) div {
@@ -99,7 +105,7 @@ img {
 .timeline ul li:nth-child(even) div::before {
   right: -15px;
   border-width: 8px 0 8px 16px;
-  border-color: transparent transparent transparent #d6d9da;;
+  border-color: transparent transparent transparent #d6d9da;
 }
 
 .timeline ul li::after {
@@ -146,7 +152,7 @@ img {
   }
    
   .timeline ul li div {
-    width: calc(100vw - 91px);
+    width: calc(100vw - 120px);
   }
    
   .timeline ul li:nth-child(even) div {
@@ -156,14 +162,21 @@ img {
   .timeline ul li:nth-child(even) div::before {
     left: -15px;
     border-width: 8px 16px 8px 0;
-    border-color: transparent #F45B69 transparent transparent;
+    border-color: transparent #d6d9da transparent transparent;
   }
 }
 
+.text-center {
+    text-align: center;
+}
+
+time {
+    font-weight: bolder;
+}
 
 .title {
     color: white;
-    text-shadow: 2px 2px black;
+    text-shadow: 2px 2px #333333;
 }
 
 .placeholder {
@@ -206,4 +219,54 @@ h2 {
     color: #2b2a2a;
     background-color: #d6d9da;
     border-color: rgba(78, 81, 82, 0.75);
+}
+
+pre, blockquote, dl, figure, table, p, ul, ol, form {
+    margin-bottom: 0rem;
+}
+
+.footer {
+    margin-bottom: 50px;
+}
+
+/* Mobile first queries */
+
+/* Larger than mobile */
+@media (min-width: 400px) {
+
+}
+
+/* Larger than phablet */
+@media (min-width: 550px) {
+
+}
+
+/* Larger than tablet */
+@media (min-width: 750px) {
+    .vert-center {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0 15% 0 15%;
+    }
+}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {
+    .vert-center {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0 25% 0 25%;
+    }
+}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {
+    .vert-center {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0 30% 0 30%;
+    }
 }
