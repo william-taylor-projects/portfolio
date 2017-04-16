@@ -52,7 +52,7 @@ img {
   position: relative;
   width: 6px;
   margin: 0 auto;
-  padding-top: 50px;
+  padding-top: 10px;
   background: rgb(171, 170, 170);
 }
 
@@ -101,7 +101,7 @@ img {
 }
 
 .timeline ul li:nth-child(even) div {
-  left: -439px;
+  left: -390px;
 }
 
 .timeline ul li:nth-child(even) div::before {
@@ -208,14 +208,14 @@ h2 {
     letter-spacing: -.1rem;
 }
 
+.img-circle {
+    border-radius: 50%;
+}
+
 .button.button-primary:hover, button.button-primary:hover, input[type="submit"].button-primary:hover, input[type="reset"].button-primary:hover, input[type="button"].button-primary:hover, .button.button-primary:focus, button.button-primary:focus, input[type="submit"].button-primary:focus, input[type="reset"].button-primary:focus, input[type="button"].button-primary:focus {
     color: #2b2a2a;
     background-color: #d6d9da;
     border-color: rgb(0, 0, 0);
-}
-
-pre, blockquote, dl, figure, table, p, ul, ol, form {
-    margin-bottom: 0rem;
 }
 
 .footer {
