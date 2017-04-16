@@ -14,12 +14,12 @@ h1 {
 }
 
 .thin {
-    font-weight: 100;
+    font-weight: 200;
     letter-spacing: 1;
 }
 
 .embold {
-    color: white;
+    color: white !important; 
     text-shadow: 2px 2px #333333;
 }
 
@@ -214,6 +214,7 @@ time {
 .title {
     color: white;
     text-shadow: 2px 2px #333333;
+    margin-bottom: 5px;
 }
 
 .placeholder {
@@ -228,6 +229,7 @@ time {
     color: white;
     text-shadow: 2px 2px #333333;
     letter-spacing: 0.75px;
+    margin-bottom: 1.25rem;
 }
 
 /* Skeleton overrides  */
@@ -258,26 +260,27 @@ h2 {
 }
 
 /* Mobile first queries */
+.header {
+    text-align: center;
+    height: 400px;
+    vertical-align: middle;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 4px -2px gray;
+}
+
+.header-video {
+    width: 100%;
+    height: 400px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    object-fit: fill;
+}
 
 /* Larger than mobile */
-@media (min-width: 400px) {
-    .header {
-        text-align: center;
-        height: 400px;
-        vertical-align: middle;
-        margin-bottom: 20px;
-        box-shadow: 0px 4px 4px -2px gray;
-    }
-
-    .header-video {
-        width: 100%;
-        height: 400px;
-        position: absolute;
-        left: 0;
-        top: 0;
-        z-index: -1;
-        object-fit: fill;
-    }
+@media (min-width: 300px) {
+    
 }
 
 /* Larger than phablet */
