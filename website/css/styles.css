@@ -72,7 +72,7 @@ blockquote p {
   position: relative;
   width: 6px;
   margin: 0 auto;
-  padding-top: 10px;
+  padding-top: 0px;
   background: rgb(171, 170, 170);
 }
 
@@ -176,6 +176,10 @@ blockquote p {
   .timeline ul li div {
     width: calc(100vw - 120px);
   }
+
+   .timeline ul li {
+        padding-top: 20px;
+    }
    
   .timeline ul li:nth-child(even) div {
     left: 45px;
@@ -239,8 +243,7 @@ h2 {
 }
 
 .footer {
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: 10px;
 }
 
 /* Mobile first queries */
@@ -317,4 +320,9 @@ h2 {
         transform: translateY(-50%);
         margin: 0 30% 0 30%;
     }
+}
+
+input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="text"]:focus, input[type="tel"]:focus, input[type="url"]:focus, input[type="password"]:focus, textarea:focus, select:focus {
+    border: 1px solid #1a1e1f;
+    outline: 0;
 }
