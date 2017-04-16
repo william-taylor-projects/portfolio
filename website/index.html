@@ -3,47 +3,19 @@
 
 <head>
     <meta charset="utf-8">
-    <title>William Taylor</title>
+    <title>Welcome</title>
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="http://www.williamsamtaylor.co.uk/images/home/icon.png" rel="shortcut icon" />
-
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
     <link rel="stylesheet" href="css/styles.css">
 
-    <script>
-        function goto(url) {
-            window.open(url, '_blank')
-        }
-
-        function isElementInViewport(el) {
-            var rect = el.getBoundingClientRect();
-            return (
-                rect.top >= 0 &&
-                rect.left >= 0 &&
-                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-            );
-        }
-
-
-        function callbackFunc() {
-            var items = document.querySelectorAll(".timeline li");
-
-            for (var i = 0; i < items.length; i++) {
-                if (isElementInViewport(items[i])) {
-                    items[i].classList.add("in-view");
-                }
-            }
-        }
-
-        window.addEventListener("load", callbackFunc);
-        window.addEventListener("scroll", callbackFunc);
-    </script>
+    <script src='scripts/script.js'></script>
 </head>
 
 <body>
@@ -54,58 +26,54 @@
         <div class='vert-center'>
             <h1 class='title'>William Taylor</h1>
             <p class='intro'>
-               Developer, volunteer and ambassador based in central Scotland. I enjoy working with multiple programming languages including C++, C#, Java and JavaScript, Swift and Python and am always open to new and exciting opportunities.
+                Developer, volunteer and ambassador based in central Scotland. I enjoy working with multiple programming languages including
+                C++, C#, Java and JavaScript, Swift and Python and am always open to new and exciting opportunities.
             </p>
             <div style='margin-top: 20px;'>
-                <button onclick="goto('https://www.linkedin.com/in/william-taylor-32b17966')" class="button-primary" href="#">LinkedIn</button>
-                <button onclick="goto('https://github.com/william-taylor')" class="button-primary" href="#">GitHub</button>
-                <button onclick="goto('https://twitter.com/wi11berto')" class="button-primary" href="#">Twitter</button>
+                <button onclick="goto('https://www.linkedin.com/in/william-taylor-32b17966')" class="button-primary" href="#">
+                    <span class="fa fa-3x fa-linkedin"></span>
+                </button>
+                <button onclick="goto('https://github.com/william-taylor')" class="button-primary" href="#">
+                    <span class="fa fa-3x fa-github"></span>
+                </button>
+                <button onclick="goto('https://twitter.com/wi11berto')" class="button-primary" href="#">
+                    <span class="fa fa-3x fa-twitter"></span>
+                </button>
             </div>
         </div>
     </section>
     <div class='container'>
-
-
         <section class='timeline'>
             <h2>Timeline</h2>
             <ul>
                 <li>
                     <div class='text-center'>
-                        <time>August 2017</time> 
+                        <time>August 2017</time>
                         <p>
-                            Started graduate employment at Morgan Stanley as a Technology Associate in Glasgow.
+                            Started graduate employment at Morgan Stanley a high profile investment bank as a <strong>Technology Associate</strong> in Glasgow.
                         </p>
                     </div>
                 </li>
                 <li>
                     <div class='text-center'>
-                        <time>July 2017</time> 
+                        <time>June 2017</time>
                         <p>
-                            Graduated with a 1st class honours degree in Computer Games Technology from the University of the West of Scotland.
+                            Graduated with a <strong>first class honours degree</strong> in Computer Games Technology from the University of the West of Scotland.
                         </p>
                     </div>
                 </li>
                 <li>
                     <div class='text-center'>
-                        <time>May 2017</time> 
+                        <time>September 2012</time>
                         <p>
-                            Left Integrated Environmental Solutions.
-                        </p>
-                    </div>
-                </li>
-                <li>
-                    <div class='text-center'>
-                        <time>April 2017</time> 
-                        <p>
-                            Finished contract work at Barnardo's.
+                            Started studying <strong>Computer Games Technology</strong> at the University of the West of Scotland at their Paisley campus.
                         </p>
                     </div>
                 </li>
             </ul>
         </section>
-
         <section>
-            <h3>Contact Info</h3>
+            <h3>Contact</h3>
             <form>
                 <div class="row">
                     <div class="six columns">
@@ -129,7 +97,14 @@
             </form>
         </section>
 
-        <section class='footer'>
+       <section class="footer u-full-width">
+        <div class="container">
+            <div class="row">
+            <div class="twelve columns center">
+                <h6>&copy 2017 William Taylor</h6>
+            </div>
+            </div>
+        </div>
         </section>
     </div>
 </body>
