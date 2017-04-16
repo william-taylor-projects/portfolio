@@ -1,0 +1,64 @@
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    text-align: center;
+    margin-top:6rem;
+    height:400px;
+}
+
+.title {
+    line-height: 1.5;
+    margin-top: 10%;
+    color: white;
+    text-shadow: 2px 2px black;
+}
+
+.placeholder {
+    height: 300px;
+}
+
+.center {
+    text-align: center;
+}
+
+.intro {
+    line-height: 1.5;
+    margin-top: 5%;
+    color: white;
+    text-shadow: 2px 2px black;
+}
+
+.header-video {
+    position: absolute;
+    top:0;
+    width: 100%;
+    object-fit: cover;
+    height:400px;
+}
+
+.header-links {
+    margin-top:10%;
+}
+
+/* Skeleton overrides  */
+.button.button-primary, button.button-primary, input[type="submit"].button-primary, input[type="reset"].button-primary, input[type="button"].button-primary {
+    color: #000;
+    background-color: rgba(240, 244, 245, 0.5);
+    border-color: rgba(78, 81, 82, 0.75);
+}
+
+h2 {
+    font-size: 4.5rem;
+    line-height: 1.25;
+    letter-spacing: -.1rem;
+}
+
+.button.button-primary:hover, button.button-primary:hover, input[type="submit"].button-primary:hover, input[type="reset"].button-primary:hover, input[type="button"].button-primary:hover, .button.button-primary:focus, button.button-primary:focus, input[type="submit"].button-primary:focus, input[type="reset"].button-primary:focus, input[type="button"].button-primary:focus {
+    color: #2b2a2a;
+    background-color: #d6d9da;
+    border-color: rgba(78, 81, 82, 0.75);
+}
