@@ -13,6 +13,11 @@ h1 {
     letter-spacing: -.1rem;
 }
 
+.thin {
+    font-weight: 100;
+    letter-spacing: 1;
+}
+
 .embold {
     color: white;
     text-shadow: 2px 2px #333333;
@@ -221,7 +226,8 @@ time {
 
 .intro {
     color: white;
-    text-shadow: 2px 2px black;
+    text-shadow: 2px 2px #333333;
+    letter-spacing: 0.75px;
 }
 
 /* Skeleton overrides  */
