@@ -13,98 +13,85 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
   <link rel="stylesheet" href="css/styles.css">
+
+  <script>
+    function goto(url) {
+        window.open(url, '_blank')
+    }
+  </script>
 </head>
 <body>
-    <video class='header-video' autoplay loop muted>
+<!--    <video class='header-video' autoplay loop muted>
         <source src="media/video3.mp4" type="video/mp4" />
-    </video>
-    <div class='container'>
-        <section class='header'>         
+    </video>-->
+    <section class='header'>  
+        <div class='vert-center'>       
             <h2 class='title'>William Taylor</h2>
             <p class='intro'>
                 Student, Developer and Volunteer based in the West of Scotland. Enjoys working with multiple languages including C++, C#, Java and JavaScript.
             </p>
-            <div class='header-links'>
-                <button class="button-primary" href="#">LinkedIn</button>
-                <button class="button-primary" href="#">GitHub</button>
-                <button class="button-primary" href="#">Twitter</button>
+            <div>
+                <button onclick="goto('https://www.linkedin.com/in/william-taylor-32b17966')" class="button-primary" href="#">LinkedIn</button>
+                <button onclick="goto('https://github.com/william-taylor')" class="button-primary" href="#">GitHub</button>
+                <button onclick="goto('https://twitter.com/wi11berto')" class="button-primary" href="#">Twitter</button>
             </div>
-        </section>
+        </div>
+    </section>
+    <div class='container'>
+        
 
-        <!-- Experience --> 
-        <section>
-            <h3>Experience</h3>
-            <p>
-                And produce say the ten moments parties. Simple innate summer fat appear basket his desire joy. Outward clothes promise at gravity do excited. Sufficient particular impossible by reasonable oh expression is. Yet preference connection unpleasant yet melancholy but end appearance. And excellence partiality estimating terminated day everything. 
-            </p>
-            <div class='row center'>
-                <div class="one-third column">
-                    <img class='fixed-height' src='media/mslogo2.jpg' />
+        <section class='timeline'>
+            <h3>Timeline</h3>
+            <ul>
+                <li>
+                <div>
                 </div>
-                <div class="one-third column">
-                    <img class='fixed-height' src='media/ies.png' />
+                </li>
+                <li>
+                <div>
                 </div>
-                <div class="one-third column">
-                    <img class='fixed-height' src='media/barnados.png' />
+                </li>
+                <li>
+                <div>
                 </div>
-            </div>
-            <div class='row center'>
-                <div class="one-third column">
-                    <img class='fixed-height' src='media/uws-logo.jpg' />
+                </li>
+                <li>
+                <div>
                 </div>
-                <div class="one-third column">
-                    <img class='fixed-height' src='media/hellouni.jpg' />
+                </li>
+                <li>
+                <div>
                 </div>
-                <div class="one-third column">
-                    <img class='fixed-height' src='media/sdworx.jpg' />
+                </li>
+                <li>
+                <div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Education --> 
-        <section>
-            <h3>Education</h3>
-            <div class='row'>
-                <div class="two-thirds column">
-                    <p>
-                        And produce say the ten moments parties. Simple innate summer fat appear basket his desire joy. Outward clothes promise at gravity do excited. Sufficient particular impossible by reasonable oh expression is. Yet preference connection unpleasant yet melancholy but end appearance. And excellence partiality estimating terminated day everything. 
-                    </p>
+                </li>
+                <li>
+                <div>
                 </div>
-                <div class="one-third column">
-                    <img src='media/uws.png' />
+                </li>
+                <li>
+                <div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Volunteering --> 
-        <section>
-            <h3>Volunteering</h3>
-            <p>
-                Whole every miles as tiled at seven or. Wished he entire esteem mr oh by. Possible bed you pleasure civility boy elegance ham. He prevent request by if in pleased. Picture too and concern has was comfort. Ten difficult resembled eagerness nor. Same park bore on be. Warmth his law design say are person. Pronounce suspected in belonging conveying ye repulsive. 
-            </p>
-            <div class='row'>
-                <div class='one-third column'>
-                    <img src='media/stem.png' /> 
+                </li>
+                <li>
+                <div>
                 </div>
-                <div class='one-third column'>
-                    <img src='media/coderdojo.png' /> 
+                </li>
+                <li>
+                <div>
                 </div>
-                <div class='one-third column'>
-                    <img src='media/ms.jpg' /> 
+                </li>
+                <li>
+                <div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Open Source --> 
-        <section>
-            <h3>Open Source</h3>
-            <div class='row'>
-                <div class="">
-                    <p>
-                        Whole every miles as tiled at seven or. Wished he entire esteem mr oh by. Possible bed you pleasure civility boy elegance ham. He prevent request by if in pleased. Picture too and concern has was comfort. Ten difficult resembled eagerness nor. Same park bore on be. Warmth his law design say are person. Pronounce suspected in belonging conveying ye repulsive. 
-                    </p>
+                </li>
+                <li>
+                <div>
                 </div>
-            </div>
+                </li>
+            </ul>
         </section>
 
         <!-- Contact --> 
@@ -114,19 +101,19 @@
                 <div class="row">
                     <div class="six columns">
                     <label for="exampleEmailInput">Your email</label>
-                    <input class="u-full-width" type="email" placeholder="test@mailbox.com" id="exampleEmailInput">
+                    <input class="u-full-width" type="email" placeholder="example@email.com" id="exampleEmailInput">
                     </div>
                     <div class="six columns">
-                    <label for="exampleRecipientInput">Reason for contacting</label>
+                    <label for="exampleRecipientInput">Contact reason?</label>
                     <select class="u-full-width" id="exampleRecipientInput">
                         <option value="Option 1">Questions</option>
-                        <option value="Option 2">Admiration</option>
-                        <option value="Option 3">Can I get your number?</option>
+                        <option value="Option 2">Work</option>
+                        <option value="Option 3">Info</option>
                     </select>
                     </div>
                 </div>
                 <label for="exampleMessage">Message</label>
-                <textarea class="u-full-width" placeholder="Hi Dave …" id="exampleMessage"></textarea>
+                <textarea class="u-full-width" placeholder="Hi William…" cols="5" id="exampleMessage"></textarea>
                 <div class="row center">
                     <input class="button-primary" type="submit" value="Submit">
                 </div>
