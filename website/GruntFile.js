@@ -17,7 +17,7 @@ module.exports = function (grunt) {
             },
             target: {
                 files: {
-                    'build/styles.css': ['css/*.css']
+                    'build/styles.min.css': ['css/*.css']
                 }
             }
         },
