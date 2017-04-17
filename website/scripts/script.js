@@ -38,7 +38,7 @@ function onLoad() {
     });
 
     var defaultDuration = 1000 // ms
-    var edgeOffset = 44 // px
+    var edgeOffset = -200 // px
     zenscroll.setup(defaultDuration, edgeOffset);
 
     movedown.addEventListener('click', function(event) {
