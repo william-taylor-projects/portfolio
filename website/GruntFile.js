@@ -33,9 +33,17 @@ module.exports = function (grunt) {
         },
 
         browserSync: {
-            bsFiles: { src: ['build/*.*', 'index.html'] },
-            options: {
-                server: { baseDir: "./" }
+            dev: {
+                bsFiles: {
+                    src : [
+                        'build/*.*',
+                        'index.html'
+                    ]
+                },
+                options: {
+                    watchTask: true,
+                    server: './'
+                }
             }
         }
     });
@@ -45,5 +53,5 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-browser-sync');
 
-    grunt.registerTask('default', ['watch']);
+    grunt.registerTask('default', ['browserSync', 'watch']);
 };
