@@ -7,6 +7,10 @@
   box-sizing: border-box;
 }
 
+.desktop-large-only {
+    display:none;
+}
+
 .skills {
     margin-bottom: 50px;
 }
@@ -297,9 +301,6 @@ h2 {
 /* Larger than tablet */
 @media (min-width: 750px) {
     .vert-center {
-        position: relative;
-        top: 50%;
-        transform: translateY(-50%);
         margin: 0 15% 0 15%;
     }
 
@@ -315,9 +316,6 @@ h2 {
 /* Larger than desktop */
 @media (min-width: 1000px) {
     .vert-center {
-        position: relative;
-        top: 50%;
-        transform: translateY(-50%);
         margin: 0 25% 0 25%;
     }
 }
@@ -325,9 +323,6 @@ h2 {
 /* Larger than Desktop HD */
 @media (min-width: 1200px) {
     .vert-center {
-        position: relative;
-        top: 50%;
-        transform: translateY(-50%);
         margin: 0 30% 0 30%;
     }
 
@@ -337,6 +332,10 @@ h2 {
 
     .header-video {
         height: 100%;
+    }
+
+    .desktop-large-only {
+        display:block;
     }
 }
 

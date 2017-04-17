@@ -27,6 +27,7 @@ function onLoad() {
     var message = document.getElementById("message");
     var email = document.getElementById("email");
     var reason = document.getElementById("reason");
+    var movedown = document.getElementById('movedown');
 
     button.addEventListener("click", function(event) {
         event.preventDefault();
@@ -35,6 +36,15 @@ function onLoad() {
         console.log('Email', email.value);
         console.log('Reason', reason.value);
     });
+
+    var defaultDuration = 1000 // ms
+    var edgeOffset = 44 // px
+    zenscroll.setup(defaultDuration, edgeOffset);
+
+    movedown.addEventListener('click', function(event) {
+        event.preventDefault();
+        zenscroll.to(movedown);
+    })
 
     prepTimeline();
 }
