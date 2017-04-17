@@ -81,7 +81,6 @@ blockquote p {
   display: inline;
 }
 
-/* TIMELINE */
 .timeline {
     margin-bottom: 75px;
 }
@@ -95,6 +94,7 @@ blockquote p {
   background: rgb(171, 170, 170);
 }
 
+/* uncss:ignore */
 .timeline ul li::after {
   content: '';
   position: absolute;
@@ -133,53 +133,52 @@ blockquote p {
   left: 45px;
 }
 
+.timeline ul li:nth-child(even) div {
+  left: -390px;
+}
+
+/*! uncss:ignore */
 .timeline ul li:nth-child(odd) div::before {
   left: -15px;
   border-width: 8px 16px 8px 0;
   border-color: transparent #d6d9da transparent transparent;
 }
 
-.timeline ul li:nth-child(even) div {
-  left: -390px;
-}
-
+/*! uncss:ignore */
 .timeline ul li:nth-child(even) div::before {
   right: -15px;
   border-width: 8px 0 8px 16px;
   border-color: transparent transparent transparent #d6d9da;
 }
 
-.timeline ul li.in-view::after {
+/*! uncss:ignore */
+.timeline ul li::after {
   background: #4c4f50;
 }
-
-/*
-.timeline ul li::after {
-  background: #fff;
-  transition: background .5s ease-in-out;
-}
  
+/*! uncss:ignore */
 .timeline ul li div {
   visibility: hidden;
   opacity: 0;
   transition: all .5s ease-in-out;
 }
  
+/*! uncss:ignore */
 .timeline ul li:nth-child(odd) div {
   transform: translate3d(200px,0,0);
 }
  
+/*! uncss:ignore */
 .timeline ul li:nth-child(even) div {
   transform: translate3d(-200px,0,0);
 }
- 
+
+/*! uncss:ignore */ 
 .timeline ul li.in-view div {
   transform: none;
   visibility: visible;
   opacity: 1;
 }
-
-*/
 
 @media screen and (max-width: 900px) {
   .timeline ul li div {
@@ -248,7 +247,7 @@ figure {
      margin: 0;
 }
 
-/* Skeleton overrides  */
+/*! Skeleton overrides  */
 .button.button-primary, button.button-primary, input[type="submit"].button-primary, input[type="reset"].button-primary, input[type="button"].button-primary {
     color: #000;
     background-color: rgba(240, 244, 245, 0.5);

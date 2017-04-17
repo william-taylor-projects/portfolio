@@ -16,7 +16,7 @@ module.exports = function (grunt) {
 
         cssmin: {
             options: {
-                keepSpecialComments: 0,
+                keepSpecialComments: '*',
                 mergeIntoShorthands: false,
                 roundingPrecision: -1
             },
@@ -62,11 +62,23 @@ module.exports = function (grunt) {
 
         uncss: {
             options: {
-                ignore: ['#added_at_runtime', /test\-[0-9]+/, /moveIn/]
+                ignore: [/test\-[0-9]+/]
             },
             dist: {
                 files: {
-                'build/styles.min.css': ['index.html']
+                    'build/styles.min.css': ['app.html']
+                }
+            }
+        },
+
+        htmlmin: {                                     
+            dist: {                                     
+                options: {                                
+                    removeComments: true,
+                    collapseWhitespace: true
+                },
+                files: {                                  
+                    'index.html': 'app.html'
                 }
             }
         }
@@ -75,9 +87,10 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-browser-sync');
     grunt.loadNpmTasks('grunt-uncss');
 
     grunt.registerTask('dev', ['uglify', 'cssmin', 'uncss', 'browserSync', 'watch'])
-    grunt.registerTask('build', ['uglify', 'cssmin', 'uncss']);
+    grunt.registerTask('build', ['uglify', 'cssmin', 'uncss', 'htmlmin']);
 };
