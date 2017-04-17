@@ -149,13 +149,14 @@ blockquote p {
   border-color: transparent transparent transparent #d6d9da;
 }
 
+.timeline ul li.in-view::after {
+  background: #4c4f50;
+}
+
+/*
 .timeline ul li::after {
   background: #fff;
   transition: background .5s ease-in-out;
-}
- 
-.timeline ul li.in-view::after {
-  background: #4c4f50;
 }
  
 .timeline ul li div {
@@ -177,6 +178,8 @@ blockquote p {
   visibility: visible;
   opacity: 1;
 }
+
+*/
 
 @media screen and (max-width: 900px) {
   .timeline ul li div {

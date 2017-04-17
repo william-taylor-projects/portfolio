@@ -13,8 +13,10 @@ module.exports = function (grunt) {
                 }
             }
         },
+
         cssmin: {
             options: {
+                keepSpecialComments: 0,
                 mergeIntoShorthands: false,
                 roundingPrecision: -1
             },
@@ -46,14 +48,25 @@ module.exports = function (grunt) {
         browserSync: {
             dev: {
                 bsFiles: {
-                    src : [
+                    src: [
                         'build/*.*',
                         'index.html'
                     ]
                 },
                 options: {
                     watchTask: true,
-                    server: './'
+                    server: '.'
+                }
+            }
+        },
+
+        uncss: {
+            options: {
+                ignore: ['#added_at_runtime', /test\-[0-9]+/, /moveIn/]
+            },
+            dist: {
+                files: {
+                'build/styles.min.css': ['index.html']
                 }
             }
         }
@@ -63,6 +76,8 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-browser-sync');
+    grunt.loadNpmTasks('grunt-uncss');
 
-    grunt.registerTask('default', ['uglify', 'cssmin', 'browserSync', 'watch']);
+    grunt.registerTask('dev', ['uglify', 'cssmin', 'uncss', 'browserSync', 'watch'])
+    grunt.registerTask('build', ['uglify', 'cssmin', 'uncss']);
 };
