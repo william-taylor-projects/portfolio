@@ -6,7 +6,10 @@ module.exports = function (grunt) {
         uglify: {
             my_target: {
                 files: {
-                    'build/script.min.js': ['scripts/script.js']
+                    'build/app.min.js': [
+                        'node_modules/zenscroll/zenscroll.js',
+                        'scripts/app.js'
+                    ]
                 }
             }
         },
@@ -17,7 +20,15 @@ module.exports = function (grunt) {
             },
             target: {
                 files: {
-                    'build/styles.min.css': ['css/*.css']
+                    'build/styles.min.css': [
+                        'node_modules/normalize.css/normalize.css',
+                        'css/circle.css',
+                        'css/font-awesome.css',
+                        'css/skeleton.css',
+                        'css/gallery.css',
+                        'css/raleway.css',
+                        'css/styles.css'
+                    ]
                 }
             }
         },
