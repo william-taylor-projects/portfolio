@@ -38,7 +38,7 @@ module.exports = function (grunt) {
         watch: {
             scripts: {
                 files: ['scripts/*.js', 'css/*.css'],
-                tasks: ['uglify', 'cssmin'],
+                tasks: ['uglify', 'cssmin', 'htmlmin'],
                 options: {
                     spawn: false,
                 },
@@ -91,6 +91,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-browser-sync');
     grunt.loadNpmTasks('grunt-uncss');
 
-    grunt.registerTask('dev', ['uglify', 'cssmin', 'uncss', 'browserSync', 'watch'])
+    grunt.registerTask('dev', ['uglify', 'cssmin', 'htmlmin', 'browserSync', 'watch'])
     grunt.registerTask('build', ['uglify', 'cssmin', 'uncss', 'htmlmin']);
 };
