@@ -1,6 +1,6 @@
 .gallery .control-operator:target ~ .controls .control-button {
   color: #ccc;
-  color: rgba(255, 255, 255, 0.4);
+  /*color: rgba(255, 255, 255, 0.4);*/
 }
 
 .gallery .control-button:first-of-type,
@@ -9,8 +9,8 @@
 .gallery .control-operator:nth-of-type(3):target ~ .controls .control-button:nth-of-type(3),
 .gallery .control-operator:nth-of-type(4):target ~ .controls .control-button:nth-of-type(4),
 .gallery .control-operator:nth-of-type(5):target ~ .controls .control-button:nth-of-type(5) {
-  color: white;
-  color: rgba(255, 255, 255, 0.8);
+  color: black;/* white;
+  color: rgba(255, 255, 255, 0.8);*/
 }
 
 .gallery .item:first-of-type {
@@ -657,10 +657,10 @@
 }
 
 .gallery .item {
-  height: 400px;
+  height: 300px;
   overflow: hidden;
   text-align: center;
-  background: #4d87e2;
+  background: rgba(0, 0, 0, 0);
 }
 
 .gallery .controls {
