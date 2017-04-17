@@ -12,7 +12,7 @@ function isElementInViewport(el) {
     );
 }
 
-function callbackFunc() {
+function prepTimeline() {
     var items = document.querySelectorAll(".timeline li");
 
     for (var i = 0; i < items.length; i++) {
@@ -22,9 +22,27 @@ function callbackFunc() {
     }
 }
 
-window.addEventListener("load", callbackFunc);
-window.addEventListener("scroll", callbackFunc);
+function onLoad() {
+    var button = document.getElementById("submit");
+    var message = document.getElementById("message");
+    var email = document.getElementById("email");
+    var reason = document.getElementById("reason");
 
+    button.addEventListener("click", function(event) {
+        event.preventDefault();
+
+        console.log(message.value);
+        console.log('Email', email.value);
+        console.log('Reason', reason.value);
+    });
+
+    prepTimeline();
+}
+
+window.addEventListener("load", onLoad);
+window.addEventListener("scroll", prepTimeline);
+
+// Google Analytics / disable if running from localhost
 if (location.hostname !== "localhost" && location.hostname !== "127.0.0.1") {
     (function (i, s, o, g, r, a, m) {
         i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
@@ -32,6 +50,7 @@ if (location.hostname !== "localhost" && location.hostname !== "127.0.0.1") {
         }, i[r].l = 1 * new Date(); a = s.createElement(o),
             m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
     })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
     ga('create', 'UA-96533413-4', 'auto');
     ga('send', 'pageview');
 }

@@ -24,7 +24,7 @@ module.exports = function (grunt) {
 
         watch: {
             scripts: {
-                files: ['**/*.js', '**/*.css', '**/*.html'],
+                files: ['scripts/*.js', 'css/*.css'],
                 tasks: ['uglify', 'cssmin'],
                 options: {
                     spawn: false,
@@ -53,5 +53,5 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-browser-sync');
 
-    grunt.registerTask('default', ['browserSync', 'watch']);
+    grunt.registerTask('default', ['uglify', 'cssmin', 'browserSync', 'watch']);
 };
