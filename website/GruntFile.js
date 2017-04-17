@@ -9,9 +9,22 @@ module.exports = function(grunt) {
                 'build/script.min.js': ['scripts/script.js']
             }
         }
+      },
+      cssmin: {
+        options: {
+            mergeIntoShorthands: false,
+            roundingPrecision: -1
+        },
+        target: {
+            files: {
+                'build/styles.css': ['css/*.css']
+            }
+        }
       }
    });
 
    grunt.loadNpmTasks('grunt-contrib-uglify');
-   grunt.registerTask('default', ['uglify']);
+   grunt.loadNpmTasks('grunt-contrib-cssmin');
+
+   grunt.registerTask('default', ['uglify', 'cssmin']);
 };
