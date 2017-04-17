@@ -10,7 +10,9 @@
   "license": "ISC",
   "devDependencies": {
     "grunt": "^1.0.1",
+    "grunt-browser-sync": "^2.2.0",
     "grunt-contrib-cssmin": "^2.1.0",
-    "grunt-contrib-uglify": "^2.3.0"
+    "grunt-contrib-uglify": "^2.3.0",
+    "grunt-contrib-watch": "^1.0.0"
   }
 }

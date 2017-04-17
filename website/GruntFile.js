@@ -20,11 +20,29 @@ module.exports = function(grunt) {
                 'build/styles.css': ['css/*.css']
             }
         }
-      }
+      },
+
+      watch: {
+        scripts: {
+            files: ['**/*.js', '**/*.css', '**/*.html'],
+            tasks: ['uglify', 'cssmin'],
+            options: {
+                spawn: false,
+            },
+        },
+      },
+
+      browserSync: {
+            bsFiles: { src : ['build/*.*', 'index.html'] },
+            options: {
+                server: { baseDir: "./" }
+            }
+        }
    });
 
    grunt.loadNpmTasks('grunt-contrib-uglify');
    grunt.loadNpmTasks('grunt-contrib-cssmin');
-
-   grunt.registerTask('default', ['uglify', 'cssmin']);
+   grunt.loadNpmTasks('grunt-contrib-watch');
+   grunt.loadNpmTasks('grunt-browser-sync');
+   grunt.registerTask('default', ['browserSync', 'watch']);
 };

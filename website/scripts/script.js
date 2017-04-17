@@ -12,7 +12,6 @@ function isElementInViewport(el) {
     );
 }
 
-
 function callbackFunc() {
     var items = document.querySelectorAll(".timeline li");
 
@@ -33,7 +32,6 @@ if (location.hostname !== "localhost" && location.hostname !== "127.0.0.1") {
     }, i[r].l = 1 * new Date(); a = s.createElement(o),
         m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
     })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
     ga('create', 'UA-96533413-4', 'auto');
     ga('send', 'pageview');
 }
