@@ -655,14 +655,13 @@
 }
 
 .gallery .item {
-  height: 300px;
   overflow: hidden;
   text-align: center;
   background: rgba(0, 0, 0, 0);
 }
 
 .gallery .controls {
-  position: absolute;
+  position: relative; /** Adding gal **/
   bottom: 0;
   width: 100%;
   text-align: center;

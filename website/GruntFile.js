@@ -1,48 +1,49 @@
 
-module.exports = function(grunt) {
-   grunt.initConfig({
-      pkg: grunt.file.readJSON('package.json'),
+module.exports = function (grunt) {
+    grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
 
-      uglify: {
-         my_target: {
-            files: {
-                'build/script.min.js': ['scripts/script.js']
+        uglify: {
+            my_target: {
+                files: {
+                    'build/script.min.js': ['scripts/script.js']
+                }
             }
-        }
-      },
-      cssmin: {
-        options: {
-            mergeIntoShorthands: false,
-            roundingPrecision: -1
         },
-        target: {
-            files: {
-                'build/styles.css': ['css/*.css']
-            }
-        }
-      },
-
-      watch: {
-        scripts: {
-            files: ['**/*.js', '**/*.css', '**/*.html'],
-            tasks: ['uglify', 'cssmin'],
+        cssmin: {
             options: {
-                spawn: false,
+                mergeIntoShorthands: false,
+                roundingPrecision: -1
+            },
+            target: {
+                files: {
+                    'build/styles.css': ['css/*.css']
+                }
+            }
+        },
+
+        watch: {
+            scripts: {
+                files: ['**/*.js', '**/*.css', '**/*.html'],
+                tasks: ['uglify', 'cssmin'],
+                options: {
+                    spawn: false,
+                },
             },
         },
-      },
 
-      browserSync: {
-            bsFiles: { src : ['build/*.*', 'index.html'] },
+        browserSync: {
+            bsFiles: { src: ['build/*.*', 'index.html'] },
             options: {
                 server: { baseDir: "./" }
             }
         }
-   });
+    });
 
-   grunt.loadNpmTasks('grunt-contrib-uglify');
-   grunt.loadNpmTasks('grunt-contrib-cssmin');
-   grunt.loadNpmTasks('grunt-contrib-watch');
-   grunt.loadNpmTasks('grunt-browser-sync');
-   grunt.registerTask('default', ['browserSync', 'watch']);
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-browser-sync');
+
+    grunt.registerTask('default', ['watch']);
 };
