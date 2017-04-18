@@ -2,12 +2,14 @@
 const WebsiteApi = require("./scripts/website.js");
 const logger = require("./scripts/logger.js");
 
+const compression = require('compression');
 const express = require('express');
 const crypto = require('crypto');
 const vhost = require('vhost');
 const fs = require("fs");
 
 const app = express();
+app.use(compression());
 app.use(express.static(__dirname + "/public/"));
 app.use(require('body-parser').json());
 app.use(require('cors')());
@@ -42,7 +44,7 @@ function recursivePrint(json) {
 const server = app.listen(3004, () => {
   const key = process.argv[process.argv.length - 1];
   const json = fs.readFileSync('private/credentials.json', 'utf8');
-  const dataNoInvalidChars = data.toString().replace(/^\uFEFF/, '');
+  const dataNoInvalidChars = json.toString().replace(/^\uFEFF/, '');
   const auth = JSON.parse(dataNoInvalidChars);
   auth.username = decrypt(key, auth.username);
   auth.password = decrypt(key, auth.password);
