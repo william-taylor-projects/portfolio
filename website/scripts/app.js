@@ -1,3 +1,4 @@
+
 function goto(url) {
     window.open(url, '_blank')
 }
@@ -33,9 +34,11 @@ function onLoad() {
     var email = document.getElementById("email");
     var reason = document.getElementById("reason");
     var movedown = document.getElementById('movedown');
+    var alert = document.getElementById('alert');
 
     email.addEventListener("change", function(event) {
         var currentValue = email.value.trim();
+        alert.classList.remove('alert-show');
 
         if(currentValue.length == 0) 
             return;
@@ -51,6 +54,7 @@ function onLoad() {
 
     message.addEventListener("change", function(event) {
         var currentValue = message.value.trim();
+        alert.classList.remove('alert-show');
 
         if(currentValue.length > 0) {
             message.classList.add('form-success');
@@ -79,6 +83,8 @@ function onLoad() {
             http.open("POST", "http://williamsamtaylor.co.uk:3004/send");
             http.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             http.send(JSON.stringify(body));
+
+            alert.classList.add('alert-show');
 
             message.classList.remove('form-success', 'form-error');
             email.classList.remove('form-success', 'form-error');

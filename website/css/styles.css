@@ -368,3 +368,19 @@ input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focu
 .form-success {
     border-color: green !important;
 }
+
+/*! uncss:ignore */
+.alert {
+    font-size: 50%;
+    margin-top: 10px;
+     display: none;
+}
+
+/*! uncss:ignore */
+.alert-show {
+    display:inline;
+}
+
+.footer {
+    margin-top: -15px;
+}
