@@ -4,7 +4,6 @@
   "description": "A backend for my website.",
   "main": "server.js",
   "scripts": {
-    "start": "node website-server.js",
     "test": "echo \"No tests written\" && exit 0"
   },
   "author": "William Taylor",
