@@ -54,9 +54,9 @@ class WebsiteApi {
 
   setup(json) {
     this.email_client = email.server.connect({
-      user: json.email.username,
-      password: json.email.password,
-      host: json.email.host,
+      user: json.username,
+      password: json.password,
+      host: json.host,
       ssl: true
     });
 

@@ -4,12 +4,16 @@ const logger = require("./scripts/logger.js");
 
 const express = require('express');
 const crypto = require('crypto');
+const vhost = require('vhost');
 const fs = require("fs");
-const app = express();
 
-app.use(express.static(__dirname + "/public/"));
+const app = express();
+//app.use(express.static(__dirname + "/public/"));
 app.use(require('body-parser').json());
 app.use(require('cors')());
+app.use(vhost('http://localhost:3004/', (req, res, next) => {
+  console.log('Testing');
+}));
 
 function decrypt(key, text) {
   const decipher = crypto.createDecipher('aes-256-ctr', key);
@@ -40,21 +44,15 @@ const server = app.listen(3004, () => {
     } else {
       const dataNoInvalidChars = data.toString().replace(/^\uFEFF/, '');
       const auth = JSON.parse(dataNoInvalidChars);
-
-      auth.email.username = decrypt(key, auth.email.username);
-      auth.email.password = decrypt(key, auth.email.password);
-      auth.email.host = decrypt(key, auth.email.host);
+      auth.username = decrypt(key, auth.username);
+      auth.password = decrypt(key, auth.password);
+      auth.host = decrypt(key, auth.host);
 
       recursivePrint(auth);
 
-      try {
-        const websiteAPI = new WebsiteApi();
-        websiteAPI.setup(auth);
-        websiteAPI.use(app, "/");
-      } catch(e) {
-        logger.printError(e);
-        logger.printError(`n - These were the credentials \n ${JSON.stringify(auth)}`);
-      }
+      const websiteAPI = new WebsiteApi();
+      websiteAPI.setup(auth);
+      websiteAPI.use(app, "/");
     }
   });
 });
