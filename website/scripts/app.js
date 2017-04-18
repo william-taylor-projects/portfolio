@@ -2,6 +2,11 @@ function goto(url) {
     window.open(url, '_blank')
 }
 
+function validateEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+}
+
 function isElementInViewport(el) {
     var rect = el.getBoundingClientRect();
     return (
@@ -29,13 +34,40 @@ function onLoad() {
     var reason = document.getElementById("reason");
     var movedown = document.getElementById('movedown');
 
+    email.addEventListener("change", function(event) {
+        var currentValue = email.value.trim();
+
+        if(currentValue.length == 0) 
+            return;
+
+        if(validateEmail(email.value.trim())) {
+            email.classList.add('form-success');
+            email.classList.remove('form-error');
+        } else {
+            email.classList.add('form-error');
+            email.classList.remove('form-success');
+        }
+    });
+
+    message.addEventListener("change", function(event) {
+        var currentValue = message.value.trim();
+
+        if(currentValue.length > 0) {
+            message.classList.add('form-success');
+            message.classList.remove('form-error');
+        } else {
+            message.classList.add('form-error');
+            message.classList.remove('form-success');
+        }
+    });
+
     button.addEventListener("click", function(event) {
         event.preventDefault();
 
         var messageText = message.value.trim();
         var address = email.value.trim();
 
-        if(messageText.length > 0 && address.length > 0) {
+        if(validateEmail(address) && messageText.length > 0) {
             var body = {
                 subject: "Reason: " + reason.value,
                 message: messageText,
@@ -48,11 +80,10 @@ function onLoad() {
             http.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             http.send(JSON.stringify(body));
 
+            message.classList.remove('form-success', 'form-error');
+            email.classList.remove('form-success', 'form-error');
             message.value = "";
             email.value = "";
-        } else {
-            message.classList.add('form-error')
-            email.classList.add('form-error');
         }
     });
 

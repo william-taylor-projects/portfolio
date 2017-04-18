@@ -361,5 +361,10 @@ input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focu
 
 /*! uncss:ignore */
 .form-error {
-    border-color: red;
+    border-color: red !important;
+}
+
+/*! uncss:ignore */
+.form-success {
+    border-color: green !important;
 }
