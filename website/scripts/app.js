@@ -39,6 +39,7 @@ function onLoad() {
     email.addEventListener("change", function(event) {
         var currentValue = email.value.trim();
         alert.classList.remove('alert-show');
+        alert.classList.add('alert-hide');
 
         if(currentValue.length == 0) 
             return;
@@ -55,6 +56,7 @@ function onLoad() {
     message.addEventListener("change", function(event) {
         var currentValue = message.value.trim();
         alert.classList.remove('alert-show');
+        alert.classList.add('alert-hide');
 
         if(currentValue.length > 0) {
             message.classList.add('form-success');
@@ -84,6 +86,7 @@ function onLoad() {
             http.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             http.send(JSON.stringify(body));
 
+            alert.classList.remove('alert-hide');
             alert.classList.add('alert-show');
 
             message.classList.remove('form-success', 'form-error');
