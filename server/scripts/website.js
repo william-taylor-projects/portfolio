@@ -92,4 +92,4 @@ class WebsiteApi {
   }
 }
 
-module.exports = WebsiteApi;
+module.exports = { WebsiteApi }

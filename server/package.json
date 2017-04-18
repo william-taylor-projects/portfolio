@@ -1,11 +1,11 @@
 {
-  "name": "WebsiteBackend",
+  "name": "website-server",
   "version": "1.0.0",
   "description": "A backend for my website.",
-  "main": "website_backend.js",
+  "main": "server.js",
   "scripts": {
     "start": "node website-server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"No tests written\" && exit 0"
   },
   "author": "William Taylor",
   "license": "ISC",

@@ -1,9 +1,10 @@
 
 const colors = require('colors');
+
 const logger = {
   firstCall: true,
   checkForFirstCall: () => {
-    if(this.firstCall){
+    if (this.firstCall) {
       this.firstCall = false;
       console.log("\n Node Logger = \n".bold);
     }
