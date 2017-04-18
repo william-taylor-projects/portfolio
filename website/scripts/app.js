@@ -32,13 +32,33 @@ function onLoad() {
     button.addEventListener("click", function(event) {
         event.preventDefault();
 
-        console.log(message.value);
-        console.log('Email', email.value);
-        console.log('Reason', reason.value);
+        var messageText = message.value.trim();
+        var address = email.value.trim();
+
+        if(messageText.length > 0 && address.length > 0) {
+            var body = {
+                subject: "Reason: " + reason.value,
+                message: messageText,
+                email: address,
+                name: 'Unknown'
+            };
+
+            var http = new XMLHttpRequest();   
+            http.open("POST", "http://williamsamtaylor.co.uk:3004/send");
+            http.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            http.send(JSON.stringify(body));
+
+            message.value = "";
+            email.value = "";
+        } else {
+            message.classList.add('form-error')
+            email.classList.add('form-error');
+        }
     });
 
     var defaultDuration = 1000 // ms
     var edgeOffset = -200 // px
+
     zenscroll.setup(defaultDuration, edgeOffset);
 
     movedown.addEventListener('click', function(event) {

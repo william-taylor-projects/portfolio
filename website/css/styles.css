@@ -94,7 +94,6 @@ blockquote p {
   background: rgb(171, 170, 170);
 }
 
-/* uncss:ignore */
 .timeline ul li::after {
   content: '';
   position: absolute;
@@ -358,4 +357,9 @@ input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focu
 }
 .c100.black.dark:hover > span {
   color: #333333;
+}
+
+/*! uncss:ignore */
+.form-error {
+    border-color: red;
 }
