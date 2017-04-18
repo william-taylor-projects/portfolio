@@ -1,13 +1,12 @@
 
-const DashboardApi = require("./classes/dashboard.js");
-const WebsiteApi = require("./classes/website.js");
-const logger = require("./classes/logger.js");
+const WebsiteApi = require("./scripts/website.js");
+const logger = require("./scripts/logger.js");
 
 const express = require('express');
 const crypto = require('crypto');
 const fs = require("fs");
-
 const app = express();
+
 app.use(express.static(__dirname + "/public/"));
 app.use(require('body-parser').json());
 app.use(require('cors')());
@@ -32,23 +31,15 @@ function recursivePrint(json) {
 }
 
 const server = app.listen(3004, () => {
-  const key = process.argv[process.argv.length-1];
-  const host = server.address().address;
-  const port = server.address().port;
+  const key = process.argv[process.argv.length - 1];
 
-  logger.printSuccess('Website backend listening at http://' + host + ":" + port);
-
-  fs.readFile('public/json/credentials.json', 'utf8', (err, data) => {
+  fs.readFile('private/credentials.json', 'utf8', (err, data) => {
     if (err) {
-      logger.printError(err);
       logger.printError("\n - These were the credentials \n" + JSON.stringify(json));
+      logger.printError(err);
     } else {
       const dataNoInvalidChars = data.toString().replace(/^\uFEFF/, '');
       const auth = JSON.parse(dataNoInvalidChars);
-
-      auth.dashboard.username = decrypt(key, auth.dashboard.username);
-      auth.dashboard.password = decrypt(key, auth.dashboard.password);
-      auth.dashboard.url = decrypt(key, auth.dashboard.url);
 
       auth.email.username = decrypt(key, auth.email.username);
       auth.email.password = decrypt(key, auth.email.password);
@@ -57,10 +48,6 @@ const server = app.listen(3004, () => {
       recursivePrint(auth);
 
       try {
-        //const dashboardAPI = new DashboadApi();
-        //dashboardAPI.setup(auth);
-        //dashboardAPI.use(app, "/hub/");
-
         const websiteAPI = new WebsiteApi();
         websiteAPI.setup(auth);
         websiteAPI.use(app, "/");
