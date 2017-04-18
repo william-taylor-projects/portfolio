@@ -8,12 +8,17 @@ const vhost = require('vhost');
 const fs = require("fs");
 
 const app = express();
-//app.use(express.static(__dirname + "/public/"));
+app.use(express.static(__dirname + "/public/"));
 app.use(require('body-parser').json());
 app.use(require('cors')());
-app.use(vhost('http://localhost:3004/', (req, res, next) => {
-  console.log('Testing');
-}));
+
+const json = JSON.parse(fs.readFileSync('private/domains.json', 'utf8'));
+json.domains.forEach(entry => {
+  app.use(vhost(entry.domain, (req, res) => {
+    const hostname = req.vhost.host;
+    res.redirect('http://' + hostname + entry.url);
+  }));  
+});
 
 function decrypt(key, text) {
   const decipher = crypto.createDecipher('aes-256-ctr', key);
@@ -36,23 +41,16 @@ function recursivePrint(json) {
 
 const server = app.listen(3004, () => {
   const key = process.argv[process.argv.length - 1];
+  const json = fs.readFileSync('private/credentials.json', 'utf8');
+  const dataNoInvalidChars = data.toString().replace(/^\uFEFF/, '');
+  const auth = JSON.parse(dataNoInvalidChars);
+  auth.username = decrypt(key, auth.username);
+  auth.password = decrypt(key, auth.password);
+  auth.host = decrypt(key, auth.host);
 
-  fs.readFile('private/credentials.json', 'utf8', (err, data) => {
-    if (err) {
-      logger.printError("\n - These were the credentials \n" + JSON.stringify(json));
-      logger.printError(err);
-    } else {
-      const dataNoInvalidChars = data.toString().replace(/^\uFEFF/, '');
-      const auth = JSON.parse(dataNoInvalidChars);
-      auth.username = decrypt(key, auth.username);
-      auth.password = decrypt(key, auth.password);
-      auth.host = decrypt(key, auth.host);
+  recursivePrint(auth);
 
-      recursivePrint(auth);
-
-      const websiteAPI = new WebsiteApi();
-      websiteAPI.setup(auth);
-      websiteAPI.use(app, "/");
-    }
-  });
+  const websiteAPI = new WebsiteApi();
+  websiteAPI.setup(auth);
+  websiteAPI.use(app, "/");
 });
