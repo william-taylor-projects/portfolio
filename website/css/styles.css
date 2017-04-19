@@ -292,31 +292,6 @@ input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focu
   color: #333333;
 }
 
-/* Larger than desktop */
-@media (min-width: 1000px) {
-    .vertical-center {
-        margin: 0 25% 0 25%;
-    }
-}
-
-/* Larger than Desktop HD */
-@media (min-width: 1200px) {
-    .vertical-center {
-        margin: 0 30% 0 30%;
-    }
-
-    .header {
-        height: 100vh;
-    }
-
-    .header-video {
-        height: 100%;
-    }
-
-    .desktop-large-only {
-        display:block;
-    }
-}
 
 /* Larger than mobile */
 @media (min-width: 300px) {
@@ -326,6 +301,31 @@ input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focu
 /* Larger than phablet */
 @media (min-width: 550px) {
     /* not used currently */
+}
+
+/* Larger than Tablet */
+@media screen and (max-width: 600px) {
+  .timeline ul li {
+    margin-left: 20px;
+  }
+   
+  .timeline ul li div {
+    width: calc(100vw - 120px);
+  }
+
+  .timeline ul li {
+      padding-top: 20px;
+  }
+   
+  .timeline ul li:nth-child(even) div {
+    left: 45px;
+  }
+   
+  .timeline ul li:nth-child(even) div::before {
+    left: -15px;
+    border-width: 8px 16px 8px 0;
+    border-color: transparent #d6d9da transparent transparent;
+  }
 }
 
 /* Larger than tablet */
@@ -353,27 +353,28 @@ input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focu
   }
 }
 
-/* Larger than Tablet */
-@media screen and (max-width: 600px) {
-  .timeline ul li {
-    margin-left: 20px;
-  }
-   
-  .timeline ul li div {
-    width: calc(100vw - 120px);
-  }
+/* Larger than desktop */
+@media (min-width: 1000px) {
+    .vertical-center {
+        margin: 0 25% 0 25%;
+    }
+}
 
-  .timeline ul li {
-      padding-top: 20px;
-  }
-   
-  .timeline ul li:nth-child(even) div {
-    left: 45px;
-  }
-   
-  .timeline ul li:nth-child(even) div::before {
-    left: -15px;
-    border-width: 8px 16px 8px 0;
-    border-color: transparent #d6d9da transparent transparent;
-  }
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {
+    .vertical-center {
+        margin: 0 30% 0 30%;
+    }
+
+    .header {
+        height: 100vh;
+    }
+
+    .header-video {
+        height: 100%;
+    }
+
+    .desktop-large-only {
+        display:block;
+    }
 }
