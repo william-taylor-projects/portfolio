@@ -25,10 +25,9 @@ module.exports = function (grunt) {
                     'build/styles.min.css': [
                         'node_modules/normalize.css/normalize.css',
                         'css/circle.css',
-                        'css/font-awesome.css',
+                        'css/normalize.css',
                         'css/skeleton.css',
                         'css/gallery.css',
-                        'css/raleway.css',
                         'css/styles.css'
                     ]
                 }
