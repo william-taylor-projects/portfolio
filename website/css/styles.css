@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 
-.svg-icon {
+.icon {
     width: 30px;
     height: 35px;
     padding: 2px;
@@ -352,7 +352,7 @@ select:focus {
     display: inline;
 }
 
-.svg-icon-sm {
+.icon-sm {
     width:12px; 
     height:12px;
 }
@@ -421,5 +421,6 @@ select:focus {
 }
 
 .bounce {
+  margin-top: 40px;
   animation: bounce 2s infinite;
 }
