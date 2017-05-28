@@ -5,10 +5,19 @@
   box-sizing: border-box;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
 .icon {
     width: 30px;
     height: 35px;
     padding: 2px;
+}
+
+.icon-sm {
+    width:12px; 
+    height:12px;
 }
 
 .header {
@@ -132,10 +141,12 @@ blockquote p {
   display: inline;
 }
 
+/*! uncss:ignore */ 
 .timeline {
     margin-bottom: 75px;
 }
 
+/*! uncss:ignore */ 
 .timeline ul li {
   list-style-type: none;
   position: relative;
@@ -145,6 +156,7 @@ blockquote p {
   background: rgb(171, 170, 170);
 }
 
+/*! uncss:ignore */ 
 .timeline ul li::after {
   content: '';
   position: absolute;
@@ -157,6 +169,7 @@ blockquote p {
   background: inherit;
 }
 
+/*! uncss:ignore */ 
 .timeline ul li div {
   position: relative;
   bottom: 0;
@@ -166,10 +179,12 @@ blockquote p {
   box-shadow: 0px 2px 2px rgba(187, 187, 187, 1.0);    
 }
 
+/*! uncss:ignore */ 
 .timeline ul li div:hover {
     box-shadow: 0px 6px 6px rgba(187, 187, 187, 1.0);    
 }
 
+/*! uncss:ignore */ 
 .timeline ul li div::before {
   content: '';
   position: absolute;
@@ -179,10 +194,12 @@ blockquote p {
   border-style: solid;
 }
 
+/*! uncss:ignore */ 
 .timeline ul li:nth-child(odd) div {
   left: 45px;
 }
 
+/*! uncss:ignore */ 
 .timeline ul li:nth-child(even) div {
   left: -390px;
 }
@@ -313,24 +330,23 @@ select:focus {
 }
 
 
-/* Larger than mobile */
-@media (min-width: 300px) {
-    /* not used currently */
+@media screen and (max-width: 900px) {
+  .timeline ul li div {
+    width: 250px;
+  }
+
+  .timeline ul li:nth-child(even) div {
+    left: -289px; 
+  }
 }
 
-/* Larger than phablet */
-@media (min-width: 550px) {
-    /* not used currently */
-}
-
-/* Larger than Tablet */
 @media screen and (max-width: 600px) {
   .timeline ul li {
     margin-left: 20px;
   }
    
   .timeline ul li div {
-    width: calc(100vw - 120px);
+    width: calc(100vw - 130px);
   }
 
   .timeline ul li {
@@ -340,7 +356,8 @@ select:focus {
   .timeline ul li:nth-child(even) div {
     left: 45px;
   }
-   
+
+   /*! uncss:ignore */ 
   .timeline ul li:nth-child(even) div::before {
     left: -15px;
     border-width: 8px 16px 8px 0;
@@ -348,16 +365,9 @@ select:focus {
   }
 }
 
-.inline {
-    display: inline;
-}
 
-.icon-sm {
-    width:12px; 
-    height:12px;
-}
+/* Min Media Query */
 
-/* Larger than tablet */
 @media (min-width: 750px) {
     .vertical-center {
         margin: 0 15% 0 15%;
@@ -372,24 +382,13 @@ select:focus {
     }
 }
 
-/* Larger than desktop */
-@media screen and (max-width: 900px) {
-  .timeline ul li div {
-    width: 250px;
-  }
-  .timeline ul li:nth-child(even) div {
-    left: -289px; 
-  }
-}
 
-/* Larger than desktop */
 @media (min-width: 1000px) {
     .vertical-center {
         margin: 0 25% 0 25%;
     }
 }
 
-/* Larger than Desktop HD */
 @media (min-width: 1200px) {
     .vertical-center {
         margin: 0 30% 0 30%;
@@ -421,6 +420,6 @@ select:focus {
 }
 
 .bounce {
-  margin-top: 40px;
-  animation: bounce 2s infinite;
+    margin-top:40px !important;
+    animation: bounce 2s infinite;
 }

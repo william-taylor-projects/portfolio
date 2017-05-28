@@ -25,6 +25,7 @@ function swapStyles(div, a, b) {
 
 window.addEventListener("scroll", prepareTimeline);
 window.addEventListener("load", function() {
+    var isEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     var message = document.getElementById("message");
     var email = document.getElementById("email");
     var alert = document.getElementById('alert');
@@ -35,8 +36,6 @@ window.addEventListener("load", function() {
         
         if(currentValue.length == 0) 
             return;
-
-        var isEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
         if(isEmail.test(currentValue)) {
             swapStyles(email, 'form-error', 'form-success');
@@ -65,7 +64,7 @@ window.addEventListener("load", function() {
         var messageText = message.value.trim();
         var address = email.value.trim();
 
-        if(validateEmail(address) && messageText.length > 0) {
+        if(isEmail.test(address) && messageText.length > 0) {
             var body = {
                 subject: "Reason: " + document.getElementById("reason").value,
                 message: messageText,

@@ -4,6 +4,14 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON('package.json'),
 
         uglify: {
+            options: {
+                mangle: {
+                    properties: true
+                },
+                compress: {
+                    drop_console: true
+                }
+            },
             my_target: {
                 files: {
                     'build/app.min.js': [
