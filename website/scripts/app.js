@@ -1,13 +1,4 @@
 
-function goto(url) {
-    window.open(url, '_blank')
-}
-
-function validateEmail(email) {
-    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(email);
-}
-
 function isElementInViewport(el) {
     var rect = el.getBoundingClientRect();
     return (
@@ -18,9 +9,8 @@ function isElementInViewport(el) {
     );
 }
 
-function prepTimeline() {
+function prepareTimeline() {
     var items = document.querySelectorAll(".timeline li");
-
     for (var i = 0; i < items.length; i++) {
         if (isElementInViewport(items[i])) {
             items[i].classList.add("in-view");
@@ -28,46 +18,48 @@ function prepTimeline() {
     }
 }
 
-function onLoad() {
-    var button = document.getElementById("submit");
+function swapStyles(div, a, b) {
+    div.classList.remove(a);
+    div.classList.add(b);
+}
+
+window.addEventListener("scroll", prepareTimeline);
+window.addEventListener("load", function() {
     var message = document.getElementById("message");
     var email = document.getElementById("email");
-    var reason = document.getElementById("reason");
-    var movedown = document.getElementById('movedown');
     var alert = document.getElementById('alert');
 
     email.addEventListener("change", function(event) {
         var currentValue = email.value.trim();
-        alert.classList.remove('alert-show');
-        alert.classList.add('alert-hide');
-
+        swapStyles(alert, 'alert-show', 'alert-hide');
+        
         if(currentValue.length == 0) 
             return;
 
-        if(validateEmail(email.value.trim())) {
-            email.classList.add('form-success');
-            email.classList.remove('form-error');
+        var isEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+        if(isEmail.test(currentValue)) {
+            swapStyles(email, 'form-error', 'form-success');
         } else {
-            email.classList.add('form-error');
-            email.classList.remove('form-success');
+            swapStyles(email, 'form-success', 'form-error');
         }
     });
 
     message.addEventListener("change", function(event) {
         var currentValue = message.value.trim();
-        alert.classList.remove('alert-show');
-        alert.classList.add('alert-hide');
+        swapStyles(alert, 'alert-show', 'alert-hide');
+
+        if(currentValue.length == 0) 
+            return;
 
         if(currentValue.length > 0) {
-            message.classList.add('form-success');
-            message.classList.remove('form-error');
+            swapStyles(message, 'form-error', 'form-success');
         } else {
-            message.classList.add('form-error');
-            message.classList.remove('form-success');
+            swapStyles(message, 'form-success', 'form-error');
         }
     });
 
-    button.addEventListener("click", function(event) {
+    document.getElementById("submit").addEventListener("click", function(event) {
         event.preventDefault();
 
         var messageText = message.value.trim();
@@ -75,7 +67,7 @@ function onLoad() {
 
         if(validateEmail(address) && messageText.length > 0) {
             var body = {
-                subject: "Reason: " + reason.value,
+                subject: "Reason: " + document.getElementById("reason").value,
                 message: messageText,
                 email: address,
                 name: 'Unknown'
@@ -86,9 +78,7 @@ function onLoad() {
             http.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             http.send(JSON.stringify(body));
 
-            alert.classList.remove('alert-hide');
-            alert.classList.add('alert-show');
-
+            swapStyles(alert, 'alert-hide', 'alert-show');
             message.classList.remove('form-success', 'form-error');
             email.classList.remove('form-success', 'form-error');
             message.value = "";
@@ -96,31 +86,23 @@ function onLoad() {
         }
     });
 
-    var defaultDuration = 1000 // ms
-    var edgeOffset = -200 // px
+    zenscroll.setup(1000, -200); // ms, px
 
-    zenscroll.setup(defaultDuration, edgeOffset);
-
+    var movedown = document.getElementById('movedown');
     movedown.addEventListener('click', function(event) {
         event.preventDefault();
         zenscroll.to(movedown);
     })
 
-    prepTimeline();
-}
+    prepareTimeline();
+});
 
-window.addEventListener("load", onLoad);
-window.addEventListener("scroll", prepTimeline);
+(function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-// Google Analytics / disable if running from localhost
-if (location.hostname !== "localhost" && location.hostname !== "127.0.0.1") {
-    (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date(); a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
-    ga('create', 'UA-96533413-4', 'auto');
-    ga('send', 'pageview');
-}
+ga('create', 'UA-96533413-4', 'auto');
+ga('send', 'pageview');
