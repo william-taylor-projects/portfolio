@@ -146,35 +146,31 @@ blockquote p {
 
 /*! uncss:ignore */ 
 .ms-backplate {
-    background: url('https://www.wallstreetoasis.com/files/morgan-stanley.jpg')!important;
+    background: url('../media/morgan-stanley.jpg')!important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
     color: white;
     text-shadow: black 1px 1px 1px;
 }
 
-/*! uncss:ignore */ 
 .uws-backplate {
-    background: url('https://pbs.twimg.com/media/BwrUQ19IcAAwVG3.jpg')!important;
+    background: url('../media/uws.jpg')!important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
     color: white;
     text-shadow: black 1px 1px 1px;
 }
 
-/*! uncss:ignore */ 
 .barnardos-backplate {
-    background: url('https://fundraising.co.uk/wp-content/uploads/2016/10/rsz_evie_wright_celebrates_barnardos_scotland_donation.jpg')!important;
+    background: url('../media/barnardos.jpg')!important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
     color: white;
     text-shadow: black 1px 1px 1px;
 }
-
-/*https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Flag_of_Scotland.svg/1280px-Flag_of_Scotland.svg.png*/
 
 .scotland-backplate {
-    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Flag_of_Scotland.svg/1280px-Flag_of_Scotland.svg.png')!important;
+    background: url('../media/scotland.png')!important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
     color: white;
@@ -182,7 +178,7 @@ blockquote p {
 }
 
 .ies-backplate {
-    background: url('http://images7.design-editor.com/91/9166578/3958%2F8f3fa5ab-1dee-4ba7-93b7-10087c22a933.jpg')!important;
+    background: url('../media/ies.jpg')!important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
     color: white;
@@ -190,7 +186,7 @@ blockquote p {
 }
 
 .placement-backplate {
-    background: url('https://i1.wp.com/www.glasgowarchitecture.co.uk/images/jpgs/sentinel_building_night_06.jpg')!important;
+    background: url('../media/glasgow.jpg')!important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
     color: white;
@@ -198,7 +194,7 @@ blockquote p {
 }
 
 .ican-backplate {
-    background: url('http://hellouni.mobi/wp-content/uploads/2015/08/glafeature1024-500-800x494.jpg')!important;
+    background: url('../media/ican.jpg')!important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
     color: white;
@@ -206,7 +202,7 @@ blockquote p {
 }
 
 .sdworx-backplate {
-    background: url('http://www.officeimageltd.co.uk//file/repository/DSC_1617.JPG')!important;
+    background: url('../media/sdworx.jpg')!important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
     color: white;
@@ -214,7 +210,7 @@ blockquote p {
 }
 
 .student-backplate {
-    background: url('http://www.uws.ac.uk/uploadedImages/Page_Assets/Campus_Assets/Paisley/Photo_Gallery/UWS%20Paisley%20Campus%20-%20D%20Bloc%201.jpg')!important;
+    background: url('../media/paisley.jpg')!important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
     color: white;
@@ -286,14 +282,14 @@ blockquote p {
 
 /*! uncss:ignore */
 .timeline ul li:nth-child(odd) div::before {
-  left: -15px;
+  left: -16px;
   border-width: 8px 16px 8px 0;
   border-color: transparent #d6d9da transparent transparent;
 }
 
 /*! uncss:ignore */
 .timeline ul li:nth-child(even) div::before {
-  right: -15px;
+  right: -16px;
   border-width: 8px 0 8px 16px;
   border-color: transparent transparent transparent #d6d9da;
 }
