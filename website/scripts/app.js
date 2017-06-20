@@ -34,7 +34,7 @@ window.addEventListener("load", function() {
         var currentValue = email.value.trim();
         swapStyles(alert, 'alert-show', 'alert-hide');
         
-        if(currentValue.length == 0) 
+        if(email.value.length == 0) 
             return;
 
         if(isEmail.test(currentValue)) {
@@ -48,7 +48,7 @@ window.addEventListener("load", function() {
         var currentValue = message.value.trim();
         swapStyles(alert, 'alert-show', 'alert-hide');
 
-        if(currentValue.length == 0) 
+        if(message.value.length == 0) 
             return;
 
         if(currentValue.length > 0) {
