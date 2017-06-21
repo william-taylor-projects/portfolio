@@ -13,15 +13,13 @@ app.use(express.static(__dirname + "/public/"));
 app.use(require('body-parser').json());
 app.use(require('cors')());
 
-const json = JSON.parse(fs.readFileSync('private/domains.json', 'utf8'));
+const json = JSON.parse(fs.readFileSync('./private/domains.json', 'utf8'));
 json.domains.forEach(entry => {
-  app.use(vhost(entry.domain, (req, res) => {
-    const hostname = req.vhost.host;
-    res.redirect('http://' + hostname + entry.url);
-  }));  
+  app.use(vhost(entry.domain, express.static(__dirname + entry.folder))); 
+  console.log(entry.domain, __dirname + entry.folder);   
 });
 
-const server = app.listen(3004, () => {
+const server = app.listen(3000, () => {
   const key = process.argv[process.argv.length - 1];
   const json = fs.readFileSync('private/credentials.json', 'utf8');
   const dataNoInvalidChars = json.toString().replace(/^\uFEFF/, '');

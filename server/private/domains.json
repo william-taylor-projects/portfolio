@@ -1,7 +1,8 @@
 {
     "domains": [
-        { "domain": "localhost", "url": "/localhost/" },
-        { "domain": "williamsamtaylor.com", "url": "/william-taylor/" },
-        { "domain": "youngmoneyren.org", "url": "/young-money-ren/" }
+        { "domain": "localhost", "folder": "/public/localhost/" },
+        { "domain": "www.williamsamtaylor.co.uk", "folder": "/public/william-taylor/" },
+        { "domain": "www.youngmoneyren.org", "folder": "/public/young-money-ren/" },
+        { "domain": "www.ladywell-antiques.co.uk", "folder": "public/ladywell-antiques/" }
     ]
 }
