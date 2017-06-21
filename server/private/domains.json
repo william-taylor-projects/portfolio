@@ -1,7 +1,7 @@
 {
     "domains": [
-        { "domain": "localhost", "url": "/website/" },
-        { "domain": "williamsamtaylor.com", "url": "/portfolio/" },
-        { "domain": "youngmoneyren.org", "url": "/ymr/" }
+        { "domain": "localhost", "url": "/localhost/" },
+        { "domain": "williamsamtaylor.com", "url": "/william-taylor/" },
+        { "domain": "youngmoneyren.org", "url": "/young-money-ren/" }
     ]
 }
