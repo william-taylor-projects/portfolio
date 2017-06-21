@@ -1,8 +1,8 @@
 {
     "domains": [
         { "domain": "localhost", "folder": "/public/localhost/" },
-        { "domain": "www.williamsamtaylor.co.uk", "folder": "/public/william-taylor/" },
-        { "domain": "www.youngmoneyren.org", "folder": "/public/young-money-ren/" },
-        { "domain": "www.ladywell-antiques.co.uk", "folder": "public/ladywell-antiques/" }
+        { "domain": "williamsamtaylor.co.uk", "folder": "/public/william-taylor/" },
+        { "domain": "youngmoneyren.org", "folder": "/public/young-money-ren/" },
+        { "domain": "ladywell-antiques.co.uk", "folder": "/public/ladywell-antiques/" }
     ]
 }

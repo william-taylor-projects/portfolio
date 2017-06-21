@@ -1,6 +1,8 @@
 
-const { WebsiteApi } = require("./scripts/website.js");
+
 const { printJSON, decrypt } = require('./scripts/decrypt.js');
+const { WebsiteApi } = require("./scripts/website.js");
+const { printInfo } = require('./scripts/logger.js');
 
 const compression = require('compression');
 const express = require('express');
@@ -15,7 +17,10 @@ app.use(require('cors')());
 
 const json = JSON.parse(fs.readFileSync('./private/domains.json', 'utf8'));
 json.domains.forEach(entry => {
+  app.use(vhost('*.' + entry.domain, express.static(__dirname + entry.folder)));   
   app.use(vhost(entry.domain, express.static(__dirname + entry.folder)));    
+  
+  printInfo(` ${entry.domain} -> ${entry.folder}`); 
 });
 
 const server = app.listen(3000, () => {
@@ -23,7 +28,7 @@ const server = app.listen(3000, () => {
   const json = fs.readFileSync('private/credentials.json', 'utf8');
   const dataNoInvalidChars = json.toString().replace(/^\uFEFF/, '');
   const auth = JSON.parse(dataNoInvalidChars);
-  
+
   auth.username = decrypt(key, auth.username);
   auth.password = decrypt(key, auth.password);
   auth.host = decrypt(key, auth.host);
