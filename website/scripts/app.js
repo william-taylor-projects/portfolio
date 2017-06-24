@@ -73,7 +73,7 @@ window.addEventListener("load", function() {
             };
 
             var http = new XMLHttpRequest();   
-            http.open("POST", "http://williamsamtaylor.co.uk:3004/send");
+            http.open("POST", "http://williamsamtaylor.co.uk:3000/send");
             http.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             http.send(JSON.stringify(body));
 
@@ -96,7 +96,6 @@ window.addEventListener("load", function() {
     prepareTimeline();
 });
 
-/*
 (function (i, s, o, g, r, a, m) {
     i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
         (i[r].q = i[r].q || []).push(arguments)
@@ -106,4 +105,3 @@ window.addEventListener("load", function() {
 
 ga('create', 'UA-96533413-4', 'auto');
 ga('send', 'pageview');
-*/
