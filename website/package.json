@@ -15,7 +15,8 @@
     "grunt-contrib-htmlmin": "^2.3.0",
     "grunt-contrib-uglify": "^2.3.0",
     "grunt-contrib-watch": "^1.0.0",
-    "grunt-uncss": "^0.6.1"
+    "grunt-uncss": "^0.6.1",
+    "lite-server": "^2.3.0"
   },
   "dependencies": {
     "compression": "^1.6.2",
