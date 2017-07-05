@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"No tests written\" && exit 0"
+    "test": "echo \"No tests written\" && exit 0",
+    "serve": "lite-server"
   },
   "author": "",
   "license": "ISC",
