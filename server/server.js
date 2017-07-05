@@ -17,8 +17,15 @@ app.use(require('cors')());
 
 const json = JSON.parse(fs.readFileSync('./private/domains.json', 'utf8'));
 json.domains.forEach(entry => {
-  app.use(vhost('*.' + entry.domain, express.static(__dirname + entry.folder)));   
-  app.use(vhost(entry.domain, express.static(__dirname + entry.folder)));    
+  if(entry.folder) {
+    app.use(vhost('*.' + entry.domain, express.static(__dirname + entry.folder)));   
+    app.use(vhost(entry.domain, express.static(__dirname + entry.folder)));   
+  } 
+
+  if(entry.url) {
+    app.use(vhost('*.' + entry.domain, (req, res) => res.redirect(entry.url)));
+    app.use(vhost(entry.domain, (req, res) => res.redirect(entry.url)));
+  }
   
   printInfo(` ${entry.domain} -> ${entry.folder}`); 
 });

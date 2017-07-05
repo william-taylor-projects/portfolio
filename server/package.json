@@ -9,14 +9,14 @@
   "author": "William Taylor",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.15.0",
-    "colors": "^1.1.2",
-    "compression": "^1.6.2",
-    "cors": "^2.7.1",
-    "emailjs": "^0.3.13",
-    "express": "^4.13.4",
-    "formidable": "^1.0.17",
-    "requestify": "^0.1.17",
+    "body-parser": "1.15.0",
+    "colors": "1.1.2",
+    "compression": "1.6.2",
+    "cors": "2.7.1",
+    "emailjs": "^1.0.10",
+    "express": "4.13.4",
+    "formidable": "1.0.17",
+    "requestify": "0.1.17",
     "vhost": "^3.0.2"
   }
 }
