@@ -1,6 +1,6 @@
 {
     "domains": [
-        { "domain": "localhost", "url": "http://www.google.com" },
+        { "domain": "localhost", "folder": "/public/localhost/" },
         { "domain": "williamsamtaylor.co.uk", "folder": "/public/william-taylor/" },
         { "domain": "youngmoneyren.org", "folder": "/public/young-money-ren/" },
         { "domain": "ladywell-antiques.co.uk", "folder": "/public/ladywell-antiques/" }
