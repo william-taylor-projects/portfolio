@@ -1,4 +1,4 @@
 
 module.exports = app => {
-    app.get('/hello', (req, res) => res.send('Hi'));
+  app.get('/sample', (req, res) => res.send('HelloWorld'));
 }

@@ -17,6 +17,7 @@
     "express": "4.13.4",
     "formidable": "1.0.17",
     "requestify": "0.1.17",
-    "vhost": "^3.0.2"
+    "vhost": "^3.0.2",
+    "aws-sdk": "^2.7.7"
   }
 }

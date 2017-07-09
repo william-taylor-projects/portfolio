@@ -17,25 +17,33 @@ app.use(require('cors')());
 
 const exposeFolder = desc => {
   if (desc.folder) {
-    const redirect = (req, res) => res.redirect(`http://${desc.domain}`);
     app.use(vhost('*.' + desc.domain, express.static(__dirname + desc.folder)));
-    app.use(vhost('*.' + desc.domain, redirect));
-
     app.use(vhost(desc.domain, express.static(__dirname + desc.folder)));
-    app.use(vhost(desc.domain, redirect));
   }
 }
 
 const appendServer = desc => {
   if (desc.server) {
-    const module = require(desc.server)(app);
+    const extension = require(desc.server);
+    if (typeof extension === "function") {
+      extension(app);
+    }
   }
 }
 
-const json = JSON.parse(fs.readFileSync('./private/domains.json', 'utf8'));
+const appendRedirects = desc => {
+  if (desc.folder) {
+    const redirect = (req, res) => res.redirect(`http://${desc.domain}`);
+    app.use(vhost('*.' + desc.domain, redirect));
+    app.use(vhost(desc.domain, redirect));
+  }
+}
+
+const json = JSON.parse(fs.readFileSync('private/domains.json', 'utf8'));
 json.domains.forEach(entry => {
   exposeFolder(entry);
   appendServer(entry);
+  appendRedirects(entry);
 
   printInfo(` ${entry.domain} -> ${entry.folder}`);
 });

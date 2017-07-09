@@ -1,13 +1,9 @@
 {
     "domains": [
         {
-            "domain": "35.176.151.167",
+            "domain": "localhost",
             "folder": "/public/localhost/",
             "server": "./public/localhost/server.js"
-        },
-        {
-            "domain": "localhost",
-            "folder": "/public/localhost/"
         },
         {
             "domain": "williamsamtaylor.co.uk",
