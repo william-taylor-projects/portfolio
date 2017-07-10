@@ -1,0 +1,17 @@
+{
+  "name": "server",
+  "productName": "Young Money Renfrewshire Server",
+  "version": "1.0.0",
+  "description": "Basic JSON server for website info",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.7.7",
+    "express": "^4.14.0"
+  }
+}
