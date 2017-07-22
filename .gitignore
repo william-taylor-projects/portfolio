@@ -38,3 +38,6 @@ jspm_packages
 
 # Macos files
 *.DS_Store
+
+build
+index.html
