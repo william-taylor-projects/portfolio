@@ -41,3 +41,5 @@ jspm_packages
 
 build
 index.html
+package-lock.json
+.idea

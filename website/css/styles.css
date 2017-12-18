@@ -1,8 +1,11 @@
 
-*, *::before, å*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*, *::before, a*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearence: none;
 }
 
 html, body {
@@ -17,7 +20,7 @@ html, body {
 }
 
 .icon-sm {
-    width:12px; 
+    width:12px;
     height:12px;
 }
 
@@ -65,11 +68,11 @@ html, body {
 
 /*! uncss:ignore */
 .alert-show {
-  -webkit-animation: fadein 1s; 
-  -moz-animation: fadein 1s; 
-  -ms-animation: fadein 1s; 
-  -o-animation: fadein 1s; 
-  animation: fadein 1s;
+    -webkit-animation: fadein 1s;
+    -moz-animation: fadein 1s;
+    -ms-animation: fadein 1s;
+    -o-animation: fadein 1s;
+    animation: fadein 1s;
 }
 
 .alert-hide {
@@ -100,7 +103,7 @@ h1 {
 }
 
 .embold {
-    color: white !important; 
+    color: white !important;
     text-shadow: 2px 2px #333333;
 }
 
@@ -133,122 +136,122 @@ blockquote {
 }
 
 blockquote:before {
-  color: #ccc;
-  content: open-quote;
-  font-size: 4em;
-  line-height: 0.1em;
-  margin-right: 0.25em;
-  vertical-align: -0.4em;
+    color: #ccc;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
 }
 
 blockquote p {
-  display: inline;
+    display: inline;
 }
 
-/*! uncss:ignore */ 
+/*! uncss:ignore */
 .timeline {
     margin-bottom: 75px;
 }
 
-/*! uncss:ignore */ 
+/*! uncss:ignore */
 .timeline ul li {
-  list-style-type: none;
-  position: relative;
-  width: 6px;
-  margin: 0 auto;
-  padding-top: 0px;
-  background: rgb(171, 170, 170);
+    list-style-type: none;
+    position: relative;
+    width: 6px;
+    margin: 0 auto;
+    padding-top: 0px;
+    background: rgb(171, 170, 170);
 }
 
-/*! uncss:ignore */ 
+/*! uncss:ignore */
 .timeline ul li::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  transform: translateX(-50%);
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: inherit;
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: inherit;
 }
 
-/*! uncss:ignore */ 
+/*! uncss:ignore */
 .timeline ul li div {
-  position: relative;
-  bottom: 0;
-  width: 350px;
-  padding: 15px;
-  background: rgba(187, 187, 187, 0.27);
-  box-shadow: 0px 2px 2px rgba(187, 187, 187, 1.0);    
+    position: relative;
+    bottom: 0;
+    width: 350px;
+    padding: 15px;
+    background: rgba(187, 187, 187, 0.27);
+    box-shadow: 0px 2px 2px rgba(187, 187, 187, 1.0);
 }
 
-/*! uncss:ignore */ 
+/*! uncss:ignore */
 .timeline ul li div:hover {
-    box-shadow: 0px 6px 6px rgba(187, 187, 187, 1.0);    
+    box-shadow: 0px 6px 6px rgba(187, 187, 187, 1.0);
 }
 
-/*! uncss:ignore */ 
+/*! uncss:ignore */
 .timeline ul li div::before {
-  content: '';
-  position: absolute;
-  bottom: 7px;
-  width: 0;
-  height: 0;
-  border-style: solid;
+    content: '';
+    position: absolute;
+    bottom: 7px;
+    width: 0;
+    height: 0;
+    border-style: solid;
 }
 
-/*! uncss:ignore */ 
+/*! uncss:ignore */
 .timeline ul li:nth-child(odd) div {
-  left: 45px;
+    left: 45px;
 }
 
-/*! uncss:ignore */ 
+/*! uncss:ignore */
 .timeline ul li:nth-child(even) div {
-  left: -390px;
+    left: -390px;
 }
 
 /*! uncss:ignore */
 .timeline ul li:nth-child(odd) div::before {
-  left: -16px;
-  border-width: 8px 16px 8px 0;
-  border-color: transparent #d6d9da transparent transparent;
+    left: -16px;
+    border-width: 8px 16px 8px 0;
+    border-color: transparent #d6d9da transparent transparent;
 }
 
 /*! uncss:ignore */
 .timeline ul li:nth-child(even) div::before {
-  right: -16px;
-  border-width: 8px 0 8px 16px;
-  border-color: transparent transparent transparent #d6d9da;
+    right: -16px;
+    border-width: 8px 0 8px 16px;
+    border-color: transparent transparent transparent #d6d9da;
 }
 
 /*! uncss:ignore */
 .timeline ul li::after {
-  background: #4c4f50;
-}
- 
-/*! uncss:ignore */
-.timeline ul li div {
-  visibility: hidden;
-  opacity: 0;
-  transition: all .5s ease-in-out;
-}
- 
-/*! uncss:ignore */
-.timeline ul li:nth-child(odd) div {
-  transform: translate3d(200px,0,0);
-}
- 
-/*! uncss:ignore */
-.timeline ul li:nth-child(even) div {
-  transform: translate3d(-200px,0,0);
+    background: #4c4f50;
 }
 
-/*! uncss:ignore */ 
+/*! uncss:ignore */
+.timeline ul li div {
+    visibility: hidden;
+    opacity: 0;
+    transition: all .5s ease-in-out;
+}
+
+/*! uncss:ignore */
+.timeline ul li:nth-child(odd) div {
+    transform: translate3d(200px,0,0);
+}
+
+/*! uncss:ignore */
+.timeline ul li:nth-child(even) div {
+    transform: translate3d(-200px,0,0);
+}
+
+/*! uncss:ignore */
 .timeline ul li.in-view div {
-  transform: none;
-  visibility: visible;
-  opacity: 1;
+    transform: none;
+    visibility: visible;
+    opacity: 1;
 }
 
 .text-center {
@@ -261,8 +264,8 @@ time {
 }
 
 hr {
-    margin-top: 0.5rem; 
-    margin-bottom: 0.5rem; 
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
     border-width: 0;
     border-top: 1px solid #e1e1e1;
 }
@@ -285,12 +288,12 @@ hr {
 }
 
 figure {
-     margin: 0;
+    margin: 0;
 }
 
 /* SKELETON OVERRIDES  */
 .button.button-primary, button.button-primary, input[type="submit"].button-primary, input[type="reset"].button-primary, input[type="button"].button-primary {
-        color: #000;
+    color: #000;
     background-color: rgba(241, 241, 241, 0.48);
     border-color: rgb(130, 129, 129);
 }
@@ -302,26 +305,26 @@ h2 {
     margin-bottom: 50px;
 }
 
-.button.button-primary:hover, 
-button.button-primary:hover, 
-input[type="submit"].button-primary:hover, 
-input[type="reset"].button-primary:hover, 
-input[type="button"].button-primary:hover, 
-.button.button-primary:focus, 
-button.button-primary:focus, 
-input[type="submit"].button-primary:focus, 
-input[type="reset"].button-primary:focus, 
+.button.button-primary:hover,
+button.button-primary:hover,
+input[type="submit"].button-primary:hover,
+input[type="reset"].button-primary:hover,
+input[type="button"].button-primary:hover,
+.button.button-primary:focus,
+button.button-primary:focus,
+input[type="submit"].button-primary:focus,
+input[type="reset"].button-primary:focus,
 input[type="button"].button-primary:focus {
     color: #2b2a2a;
     background-color: #d6d9da;
     border-color: rgb(0, 0, 0);
 }
 
-input[type="email"]:focus, input[type="number"]:focus, 
-input[type="search"]:focus, input[type="text"]:focus, 
-input[type="tel"]:focus, input[type="url"]:focus, 
-input[type="password"]:focus, 
-textarea:focus, 
+input[type="email"]:focus, input[type="number"]:focus,
+input[type="search"]:focus, input[type="text"]:focus,
+input[type="tel"]:focus, input[type="url"]:focus,
+input[type="password"]:focus,
+textarea:focus,
 select:focus {
     border: 1px solid #1a1e1f;
     outline: 0;
@@ -329,55 +332,55 @@ select:focus {
 
 /* CIRCLE.CSS GREYSCALE STYLE */
 .c100.black .bar, .c100.black .fill {
-  border-color: #333333 !important;
+    border-color: #333333 !important;
 }
 
 .c100.black:hover > span {
-  color: #333333;
+    color: #333333;
 }
 
 .c100.black.dark .bar, .c100.black.dark .fill {
-  border-color: #333333 !important;
+    border-color: #333333 !important;
 }
 
 .c100.black.dark:hover > span {
-  color: #333333;
+    color: #333333;
 }
 
 
 @media screen and (max-width: 900px) {
-  .timeline ul li div {
-    width: 250px;
-  }
+    .timeline ul li div {
+        width: 250px;
+    }
 
-  .timeline ul li:nth-child(even) div {
-    left: -289px; 
-  }
+    .timeline ul li:nth-child(even) div {
+        left: -289px;
+    }
 }
 
 @media screen and (max-width: 600px) {
-  .timeline ul li {
-    margin-left: 20px;
-  }
-   
-  .timeline ul li div {
-    width: calc(100vw - 130px);
-  }
+    .timeline ul li {
+        margin-left: 20px;
+    }
 
-  .timeline ul li {
-      padding-top: 20px;
-  }
-   
-  .timeline ul li:nth-child(even) div {
-    left: 45px;
-  }
+    .timeline ul li div {
+        width: calc(100vw - 130px);
+    }
 
-   /*! uncss:ignore */ 
-  .timeline ul li:nth-child(even) div::before {
-    left: -15px;
-    border-width: 8px 16px 8px 0;
-    border-color: transparent #d6d9da transparent transparent;
-  }
+    .timeline ul li {
+        padding-top: 20px;
+    }
+
+    .timeline ul li:nth-child(even) div {
+        left: 45px;
+    }
+
+    /*! uncss:ignore */
+    .timeline ul li:nth-child(even) div::before {
+        left: -15px;
+        border-width: 8px 16px 8px 0;
+        border-color: transparent #d6d9da transparent transparent;
+    }
 }
 
 
@@ -423,15 +426,15 @@ select:focus {
 }
 
 @keyframes bounce {
-	0%, 20%, 50%, 80%, 100% {
+    0%, 20%, 50%, 80%, 100% {
         transform: translateY(0);
     }
-	40% {
-    transform: translateY(-30px)
-  }
+    40% {
+        transform: translateY(-30px)
+    }
     60% {
-         transform: translateY(-15px)
-  }
+        transform: translateY(-15px)
+    }
 }
 
 .bounce {
