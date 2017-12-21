@@ -1,4 +1,4 @@
 language: node_js
 before_script:
-  - cd website
+  - cd app
   - npm install

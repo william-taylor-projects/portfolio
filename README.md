@@ -1,7 +1,7 @@
 
-<img src='preview.gif' />
+<img src='img/preview.gif' />
 
-<img src='website/icon.png' align='right' width='150' height='150' />
+<img src='app/icon.png' align='right' width='150' height='150' />
 
 # Portfolio &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [![Build status](https://travis-ci.org/william-taylor/portfolio.svg?branch=master)](https://travis-ci.org/william-taylor/portfolio) [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://github.com/ellerbrock/open-source-badge/) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
